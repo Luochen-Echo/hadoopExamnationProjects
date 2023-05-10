@@ -16,3 +16,4 @@ hadoop期末大作业
 代码初步预期
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/hadoop01.png)
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/hadoop02.png)
+我是开发者666
