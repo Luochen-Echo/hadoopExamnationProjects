@@ -2,6 +2,20 @@
 ### 一篇伟大的长篇巨著，期末的成绩就靠各位的双手来创造了
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-06%20145211.png)
 
+使用的框架springboot不需要你们下载打开用idea打开backend文件夹，重载一下pom里面的依赖
+需要你们安装的是vue3
+安装流程如下：
+```
+安装@vue/cli
+打开Git Bash，执行：
+
+npm i -g @vue/cli
+如果执行后面的操作有bug，可能是最新版有问题，可以尝试安装早期版本，比如：npm i -g @vue/cli@4
+
+启动vue自带的图形化项目管理界面
+vue ui
+```
+
 hadoop期末大作业
 实验要求
 
