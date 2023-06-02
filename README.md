@@ -1,29 +1,43 @@
-# hadoopExamnationProjects
-### 一篇伟大的长篇巨著，期末的成绩就靠各位的双手来创造了
+# 项目编写指南
+
 #### 6月15完成项目
-![](https://raw.githubusercontent.com/martine-stdo/my_images/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-06%20145211.png)
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/1685706644075.jpg)
+
+<p align="center" />骐骥一跃，不能十步；驽马十驾，功在不舍</p>
 
 #### 写在前面的话：
 **1.写项目要勇敢**
+<a align="center" href="https://imgse.com/i/pp2KAhQ"><img src="https://img2.doubanio.com/view/photo/l/public/p2229651022.webp" alt="pp2KAhQ.jpg" border="0" /></a>
 根据我自身的学习项目的经历，往往都是因为自己没写过项目或者没有****技能比如不会javascript不会html不会flak不会springboot等借口来搪塞过去,实际上往往是需要先开始写才会懂得这些技能，写项目就是首先要不怕不甚求解，遇到什么不会就直接去google(真不建议百度，大部分情况下它反而会阻碍你的进步)，以目标驱动发展，而不是等你学完xxxx全套课程后在开始（学完了黄花菜都凉了），边做边学是最好的方法
 **2.写代码是热爱，写到世界充满爱**
+![](https://img9.doubanio.com/view/photo/l/public/p2179776895.webp)
 要发自内心的想去写一个有意思的东西，而不是重复一些无意义的工作，不要划水开摆，会不会先且不论，但最起码能有所收获，不浪费时间。一起讨论解决问题的办法，共同攻克难题，选择在github上写代码是由于它的平台可以实现协同开发，可以大大加速开发效率，其实它不麻烦，如果以后还要写代码或者从事相关行业，提前了解它没啥坏处
 **3.达成成就**
+![](https://thumb11.jfcdns.com/2017-11/bce59fe774377d3d.png)
 本项目预计使用**springboot**,**vue3**,以及综合了hadoop
 用到了java,css,html,javascript,flume,hadoop,mysql,mybats-plus等技术知识，一套全流程，项目实现了**前后端分离**正所谓传统功夫和新时代大数据技术的集大成者，众所周知我和大四的学生开发了一个系统拿来给他做毕设，据我了解他们的毕设也不过如此，这个项目做好了胜过他们的毕设（你们继续在此基础添砖加瓦的话），认真写确实能学到不少东西，我也是刚开始学springboot,遇到问题大家一起解决，共同进步
 **4.解决问题的办法：**
-首先谷歌，其次gpt,然后讨论询问小组成员
+**首先谷歌，其次gpt,然后讨论询问小组成员**
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/20230602195743.png)
 **5.珍藏多年的武林秘籍**
+![](https://picx.zhimg.com/v2-b32f1cbe89988687c50e7ecccd31bbb0_720w.jpg?source=172ae18b)
 * [遇事不决先谷歌](https://www.google.com.hk/)
 * **MDN**查询前端知识```https://developer.mozilla.org/zh-CN/```
+* **freecodecamp**高质量视频教程```https://www.youtube.com/@freecodecamp```
 * **stackoverflow**国外高质量提问平台 ```https://stackoverflow.com/```
 * **下载找maven依赖的**```https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security/3.1.0```
 * **Bootstrap**我目前的前端页面都是抄他的```https://v5.bootcss.com/```
 * **vue3的中文文档**```https://cn.vuejs.org/guide/introduction.html```
 * **chatgpt**属于你的私人教授
-* [科技强国](https://xftld.org/index.php#/dashboard)
+* **Copilot**(建议淘宝购买github学生包使用)```https://github.com/features/copilot```
+*  [科技强国](https://xftld.org/index.php#/dashboard)
 
-
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/1685706611114.jpg)
+******
+## 正片开始
+前端建议使用vscode编辑
+建议安装拓展Vue Language Features提供前端代码补全
+后端使用idea随各人喜好，可以任意使用你熟悉的编辑器
 
 使用的框架springboot不需要你们下载打开用idea打开backend文件夹，重载一下pom里面的依赖
 需要你们安装的是vue3，如果没有mysql的话需要安装mysql
