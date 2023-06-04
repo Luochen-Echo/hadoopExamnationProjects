@@ -1,6 +1,17 @@
 # 项目编写指南
 #### 6月15完成项目
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/1685706644075.jpg)
+##目前已经实现的功能
+还需要实现wordcount逻辑和flume监测业务
+前端各个请求已经实现，后端两个核心业务接口还未实现
+### 文件上传下载演示
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/UploadAndDel.gif)
+
+### 文件下载演示
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/download.gif)
+### 各个页面的路由跳转
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/router.gif)
+*****
 
 <p align="center" />骐骥一跃，不能十步；驽马十驾，功在不舍</p>
 
