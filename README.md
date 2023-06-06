@@ -1,9 +1,18 @@
-# 项目编写指南
-#### 6月15完成项目
+# 项目指南
+###### 项目已于6月6日完成
+#### 有待优化的功能
+#### wordcount页面和flume功能页面完成后的刷新功能
+### 所需运行环境：
+```
+1.项目文件夹里的必要脚本以及两篇论文（按照里面的说明把文件放在对应的位置）
+2.hadoop3.1.3
+3.apache-flume-1.9.0
+backend文件夹内为springboot的后端代码跑在windows平台上
+web文件夹内为vue3的前端代码
+4.阅读本Readme和必要脚本以及连篇论文文件夹里的Readme
+``` 
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/1685706644075.jpg)
-##目前已经实现的功能
-还需要实现wordcount逻辑和flume监测业务
-前端各个请求已经实现，后端两个核心业务接口还未实现
+
 ### 文件上传下载演示
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/UploadAndDel.gif)
 
@@ -11,6 +20,10 @@
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/download.gif)
 ### 各个页面的路由跳转
 ![](https://raw.githubusercontent.com/martine-stdo/my_images/master/router.gif)
+### wordcount以及重置
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/20230606215433.png)
+### flume监测
+![](https://raw.githubusercontent.com/martine-stdo/my_images/master/20230606215400.png)
 *****
 
 <p align="center" />骐骥一跃，不能十步；驽马十驾，功在不舍</p>
