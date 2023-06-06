@@ -13,7 +13,7 @@
           </thead>
           <tbody>
             <tr v-for="file in fileList" :key="file.filePath">
-              <td>{{ file.fileName }}</td>
+              <td><span style="display: inline-block; width:330px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{ file.fileName }}</span></td>
               <td>{{ file.fileSize }}</td>
               <td>{{ file.numReplicas }}</td>
               <td>{{ file.lastModifiedTime }}</td>
@@ -46,6 +46,10 @@ export default {
         $.ajax({
             url: 'http://localhost:3001/hadoop/listfile/', // 替换为你的后端接口
             type: 'get',
+            data : {
+                HdfsPath : '/'
+            }
+            ,
             headers: {
                 Authorization: 'Bearer ' + this.$store.state.user.token
             },
@@ -148,7 +152,7 @@ div.upload {
 }
 
 div.file-list {
-  max-height: 400px; /* 设置文件列表最大高度为300px */
+  max-height: 410px; /* 设置文件列表最大高度为300px */
   overflow-y: auto; /* 添加滚动条，超出高度时显示滚动条 */
 }
 
@@ -164,7 +168,7 @@ div.file-list {
 }
 
 .btn-delete {
-    margin-left: 15%;
+    margin-left: 5%;
   background-color: #f44336;
   color: white;
 }

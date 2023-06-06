@@ -35,8 +35,8 @@ public class HdfsService {
         fs = FileSystem.get(uri, configuration, hadoopUser);
     }
 
-    public List<FileInfo> fileDetail() throws IOException {
-        RemoteIterator<LocatedFileStatus> list = fs.listFiles(new Path("/"), true);
+    public List<FileInfo> fileDetail(String HdfsPath) throws IOException {
+        RemoteIterator<LocatedFileStatus> list = fs.listFiles(new Path(HdfsPath), true);
         List<FileInfo> fileList = new ArrayList<>();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         while (list.hasNext()) {
@@ -64,6 +64,17 @@ public class HdfsService {
         Path file = new Path(filePath);
         // true for recursive deletion, in case it's a directory
         return fs.delete(file, true);
+    }
+
+    public boolean deleteFolder(String folderPath) throws IOException {
+        // Check if the path exists
+        boolean result = false;
+        if (fs.exists(new Path(folderPath))) {
+            // Delete the folder and all contents
+            fs.delete(new Path(folderPath), true);
+            result = true;
+        }
+        return result;
     }
 
     public boolean putFile(InputStream in, String hdfsFilePath) throws IOException {
