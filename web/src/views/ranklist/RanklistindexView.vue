@@ -13,7 +13,9 @@
                 </thead>
                 <tbody>
                     <tr v-for="file in fileList" :key="file.filePath">
-                        <td><span style="display: inline-block; width:330px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{ file.fileName }}</span></td>
+                        <td><span
+                                style="display: inline-block; width:330px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{
+                                    file.fileName }}</span></td>
                         <td>{{ file.fileSize }}</td>
                         <td>{{ file.numReplicas }}</td>
                         <td>{{ file.lastModifiedTime }}</td>
@@ -61,25 +63,63 @@ export default {
         })
     },
     methods: {
+        // download(filePath) {
+        //     $.ajax({
+        //         url: 'http://localhost:3001/hadoop/downloadfile/',
+        //         type: 'post',
+        //         data: {
+        //             HdfsFilePath: filePath,
+        //             loaclFilePath: 'C:\\Users\\20624\\Desktop\\' // 你的本地路径,默认下载到桌面
+        //         },
+        //         headers: {
+        //             Authorization: 'Bearer ' + this.$store.state.user.token
+        //         },
+        //         success: (resp) => {
+        //             alert(resp.message)
+        //         },
+        //         error: (resp) => {
+        //             console.error(resp)
+        //         }
+        //     })
+        // },
         download(filePath) {
             $.ajax({
-                url: 'http://localhost:3001/hadoop/downloadfile/',
+                url: 'http://localhost:3001/hadoop/download/',
                 type: 'post',
                 data: {
-                    HdfsFilePath: filePath,
-                    loaclFilePath: 'C:\\Users\\20624\\Desktop\\' // 你的本地路径,默认下载到桌面
+                    hdfsFilePath: filePath, // 确保此处的变量名与你的后端接口匹配
                 },
                 headers: {
                     Authorization: 'Bearer ' + this.$store.state.user.token
                 },
-                success: (resp) => {
-                    alert(resp.message)
+                xhrFields: {
+                    responseType: 'blob' // 设置这一行将告诉jQuery，我们期望的响应类型为 Blob
                 },
-                error: (resp) => {
+                success: function (resp) {
+                    // 创建一个新的 Blob 对象使用下载的数据
+                    let blob = new Blob([resp]);
+                    let link = document.createElement('a');
+
+                    // 使用 window.URL.createObjectURL() 方法创建对象的 URL
+                    link.href = window.URL.createObjectURL(blob);
+
+                    // 设置下载的文件名
+                    link.download = 'filename.ext'; // 使用你需要的文件名和扩展名
+
+                    // 添加链接到页面，触发 'click' 事件开始下载
+                    document.body.appendChild(link);
+                    link.click();
+
+                    // 清理：在下载开始后，移除链接并释放对象 URL
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(link.href);
+                },
+                error: function (resp) {
                     console.error(resp)
                 }
             })
         },
+
         deleteFile(filePath) {
             $.ajax({
                 url: 'http://localhost:3001/hadoop/delfile/',
@@ -124,12 +164,12 @@ export default {
                 headers: {
                     Authorization: 'Bearer ' + this.$store.state.user.token
                 },
-                success: (resp) => {
-                    alert(resp.message)
-                },
-                error: (resp) => {
-                    console.error(resp)
-                }
+                // success: (resp) => {
+                //     alert(resp.message)
+                // },
+                // error: (resp) => {
+                //     console.error(resp)
+                // }
             })
         },
     }
@@ -160,7 +200,7 @@ div.action-buttons {
     padding: 8px 12px;
     width: auto;
 }
-   
+
 
 div.file-list {
     max-height: 50vh;

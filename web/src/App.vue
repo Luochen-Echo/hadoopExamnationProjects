@@ -21,7 +21,7 @@ export default {
 
 <style>
 body {
-  background-image: url("https://s1.ax1x.com/2022/10/16/xBcp6S.jpg");
+  background-image: url("https://pic4.zhimg.com/v2-847c59a73b525acf850a3acc2b6244cf_r.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

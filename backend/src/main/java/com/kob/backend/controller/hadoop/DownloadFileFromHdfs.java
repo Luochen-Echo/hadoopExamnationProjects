@@ -17,10 +17,9 @@ public class DownloadFileFromHdfs {
     @Autowired
     private HdfsService hdfsService;
     @PostMapping("/hadoop/downloadfile/")
-    public Map<String, String> downloadFile(@RequestParam String HdfsFilePath, String loaclFilePath) throws IOException, URISyntaxException {
+    public Map<String, String> downloadFile(@RequestParam String HdfsFilePath, String FilePath) throws IOException, URISyntaxException {
         URI uri = new URI(HdfsFilePath);
         String fileName = Paths.get(uri.getPath()).getFileName().toString();
-        String FilePath = "C:\\Users\\20624\\Desktop\\" + fileName; // windows下载路径
         if (hdfsService.downloadFile(HdfsFilePath, FilePath)) {
             return Map.of("message", FilePath + "下载成功");
         } else {
