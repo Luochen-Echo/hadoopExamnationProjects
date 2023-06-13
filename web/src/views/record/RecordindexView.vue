@@ -103,8 +103,11 @@ export default {
                     // 使用 window.URL.createObjectURL() 方法创建对象的 URL
                     link.href = window.URL.createObjectURL(blob);
 
+                    // 解析出文件名
+                    let fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
+
                     // 设置下载的文件名
-                    link.download = 'filename.ext'; // 使用你需要的文件名和扩展名
+                    link.download = fileName; // 使用你需要的文件名和扩展名
 
                     // 添加链接到页面，触发 'click' 事件开始下载
                     document.body.appendChild(link);
